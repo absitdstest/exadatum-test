@@ -8,9 +8,9 @@ node {
    stage('Build') {
       // Run the maven build
       if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean deploy"
+         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean install"
       } else {
-         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean deploy/)
+         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean install/)
       }
    }
 }
